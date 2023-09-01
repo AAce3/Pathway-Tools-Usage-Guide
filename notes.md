@@ -54,7 +54,7 @@ Now, the PGDB is initialized. You will be able to see it and interact with it, a
 
 To generate metabolic data, use Build->Automated Build. Change your parameters as you like - the Automated Build window already has fairly helpful descriptions of what each of them do.
 
-![Alt Text](automated_build_2.png)
+![Alt Text](automated_build_3.png)
 
 Once it starts running, no user input is required. PathoLogic will automatically perform each of the steps to build a PGDB.
 
