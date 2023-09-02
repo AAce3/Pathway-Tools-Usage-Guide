@@ -24,7 +24,7 @@ Once Pathway Tools is open successfully, go to Tools -> PathoLogic.
 
 Once PathoLogic is open, select the options to create a new PGDB by selecting Database -> Create New DB. This will open a window that will allow you to edit changes
 
-![Alt Text](PathoLogicWindow_1.png)
+![Alt Text](assets/PathoLogicWindow_1.png)
 
 PathoLogic requires a path to the annotated genome. The path will need to either be selected through the use of the GUI or typed in manually. I have not been able to directly copy-paste the path into Pathway Tools.
 
@@ -52,14 +52,14 @@ When filling out "Organism/Project ID" the ID that you choose for the PGDB reall
 
 Now, the PGDB is initialized. You will be able to see it and interact with it, although it will have no metabolic data.
 
-![Alt Text](initialized_pgdb_2.png)
+![Alt Text](assets/initialized_pgdb_2.png)
 
 
 ### I.3 Generating metabolic data
 
 To generate metabolic data, use Build->Automated Build. Change your parameters as you like - the Automated Build window already has fairly helpful descriptions of what each of them do.
 
-![Alt Text](automated_build_3.png)
+![Alt Text](assets/automated_build_3.png)
 
 Once it starts running, no user input is required. PathoLogic will automatically perform each of the steps to build a PGDB.
 
@@ -78,7 +78,7 @@ To do this, put each of the chromosomes into a directory. Then, enter the PathoL
 
 Once you have initialized the PGDB, do not run an Automated Build yet. First, enter the "Specify replicons" editor through Build->Specify Replicons. Here, you will need to specify the names of each of the replicons, their filepath, and the type of replicon (e.g. chromosomal, plasmid, etc.). 
 
-![Alt Text](specify_replicons_4.png)
+![Alt Text](assets/specify_replicons_4.png)
 
 The name "Replicons" is a bit of a misnomer - even though biologically there may be multiple replicons per file, you can use full chromosomes, as long as you have a file and a type. 
 
