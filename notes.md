@@ -4,6 +4,7 @@ When not directly acccessing the server on endo1, you will need to connect to th
 
 ## I: PGDB (Pathway Genome Data) Creation using PathoLogic
 Video tutorial: https://www.youtube.com/watch?v=CVnGFayWQ_Q
+
 We use the PathoLogic tool to generate PGDBs for each of our species. To do this, PathoLogic needs an annotated genome in a .gbff, .gb, or .gff format. 
 
 ### I.1 Opening Pathway Tools and PathoLogic
