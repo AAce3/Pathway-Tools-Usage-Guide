@@ -1,5 +1,9 @@
 # Pathway Tools Usage Guide
+## 0: Using remote GUI on endo1
+When not directly acccessing the server on endo1, you will need to connect to the server in a way that supports GUI. On windows, I use MobaXTerm. To use MobaXterm, install the free version at https://mobaxterm.mobatek.net/download.html. Run the installer, and then open MobaXTerm. Once there, click "Session->SSH." Fill out the boxes - in "Remote Host," fill in endo1.ttu.edu, click specify username, and fill that out as studenta.
+
 ## I: PGDB (Pathway Genome Data) Creation using PathoLogic
+Video tutorial: https://www.youtube.com/watch?v=CVnGFayWQ_Q
 We use the PathoLogic tool to generate PGDBs for each of our species. To do this, PathoLogic needs an annotated genome in a .gbff, .gb, or .gff format. 
 
 ### I.1 Opening Pathway Tools and PathoLogic
@@ -100,6 +104,24 @@ The main method of analyzing PGDBs that I have used is the Comparative Genome Da
 For a more fine-grained view of individual pathways, you can also view the presence and completeness of pathways across different organisms. To do this, select the MetaCyc database. Then, click on "Pathway" to view the various methods of searching for individual pathways. Once that is open you can compare between different species.
 
 From there, you will be able to view the completeness of individual pathways across all organisms. This will allow you to identify if certain pathways are complete or missing certain reactions in organisms. Note that due to pruning, certain pathways that have all the reactions present will be marked as not present in the organism.
+
+## IV: Future Work
+- Once McKinlee is able to successfully procure more assembled genomes from membracid endosymbionts, it would be helpful to try and construct PGDBs out of them. Currently, I have Wolbachia, Sulcia and Nasuia, but the other endosymbionts are all from NCBI.
+- Dr. Brown has suggested the usage of MetaFlux for gene knockout. To do this, Pathway Tools requires the submission of a .fba file. Pathway Tools is capable of automatically generating a template for your organism. However, it doesn't work out of the box. When I ran MetaFlux, it errored, stating that "no nutrients or secretions provided." I took a crack at trying to use ModelSeed to fill in nutrients, which didn't work. I believe that it is because the data I used from ModelSeed was the biomasses, rather than nutrients which are not contained in ModelSeed data. I would also take a closer look at the file format for .fba files. I also found the following link https://bioinformatics.ai.sri.com/ptools/tutorial/sessions/flux-balance-analysis/ which is super helpful. In addition to containing MetaFlux tutorials, it contains template fbas. They seem to be for a previous version of Pathway Tools, as they also error when being used as input to MetaFlux. The error states that for most of the input compartment (the default cytosol compartment name is [CCO-CYTOSOL]) is not provided - I think the next step is to download one of these template files, fill in the compartment names for all of the biomasses, and try to run it.
+- BioCyc Integration - Dr. Brown has suggested integrating some parts of the BioCyc database for metabolic network inference. I am not sure what that would look like, but it might prove helpful in fixing some of the reaction count issues that we had when working with eukaryotic organisms.
+
+## V Additional Information
+You can find the genomes I used in
+
+    /media/DataB/Membracids/metawrap22/brownmetawrap/lab_genomes
+    /media/DataB/Membracids/metawrap22/brownmetawrap/pathwaytools_ref_genomes
+for McKinlee's genomes and NCBI genomes respectively.
+
+In addition, the Pathway Tools paper (https://arxiv.org/abs/1510.03964v3) might have helpful information.
+
+As mentioned before, there are lots of metaflux resources located here: https://bioinformatics.ai.sri.com/ptools/tutorial/sessions/flux-balance-analysis/
+
+Finally, I have uploaded my research report to this repo. It might contain some helpful information.
 
 [^1]: I have not been able to successfully use Pathway Tools with certain .gff files, as they sometimes do not contain sequence data. I suspect that you will need to use the "Enter Replicons" editor to specify a path to a fasta file.
 
